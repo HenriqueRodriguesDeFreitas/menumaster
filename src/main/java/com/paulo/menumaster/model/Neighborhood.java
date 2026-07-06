@@ -15,7 +15,7 @@ public class Neighborhood {
     @Column(length = 50, nullable = false)
     private String name;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "city_id", nullable = false, foreignKey = @ForeignKey(name = "fk_neighborhood_city"))
     private City city;
 
