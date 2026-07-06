@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: menumaster
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/menumaster
+    username: ${USERNAME_DB}
+    password: ${PASSWORD_DB}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: true
+  flyway:
+    batch: true
+logging:
+  level:
+    org.flywaydb: DEBUG
