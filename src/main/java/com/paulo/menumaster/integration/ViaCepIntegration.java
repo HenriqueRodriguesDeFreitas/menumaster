@@ -8,13 +8,13 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 
 @Component
-public class ViaCepClient {
+public class ViaCepIntegration {
 
     private final RestClient restClient;
-    private static final Logger log = LoggerFactory.getLogger(ViaCepClient.class);
+    private static final Logger log = LoggerFactory.getLogger(ViaCepIntegration.class);
 
-    public ViaCepClient() {
-        this.restClient = RestClient.builder()
+    public ViaCepIntegration(RestClient.Builder builder) {
+        this.restClient = builder
             .baseUrl("https://viacep.com.br/ws")
             .build();
     }
