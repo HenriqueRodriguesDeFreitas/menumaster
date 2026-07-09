@@ -12,8 +12,11 @@ public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    @Column(length = 255, nullable = false)
     private String name;
+    @Column(length = 11, nullable = false, unique = true)
     private String cpf;
+    @Column(name = "mobile_phone", length = 11, nullable = false)
     private String mobilePhone;
 
     @OneToOne(fetch = FetchType.LAZY)
