@@ -18,6 +18,10 @@ public class State {
     public State() {
     }
 
+    public State(String name) {
+        this.name = name;
+    }
+
     public UUID getId() {
         return id;
     }
