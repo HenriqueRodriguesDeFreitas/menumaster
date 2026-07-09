@@ -7,7 +7,7 @@ import java.util.UUID;
 @Entity
 @Table(name = "person")
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Person {
+public abstract class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -23,7 +23,16 @@ public class Person {
     @JoinColumn(name = "address_id", nullable = false, foreignKey = @ForeignKey(name = "fk_person_address"))
     private Address address;
 
+    public Person(String name, String cpf, String mobilePhone, Address address) {
+        this.name = name;
+        this.cpf = cpf;
+        this.mobilePhone = mobilePhone;
+        this.address = address;
+    }
+
     public Person() {
+
+
     }
 
     public UUID getId() {
